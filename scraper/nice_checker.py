@@ -13,13 +13,54 @@ TODO:
 
 Source code originally from https://scraperwiki.com/scrapers/nice_scraper/
 """
+import os, sys
+from optparse import OptionParser
+from ConfigParser import ConfigParser
 
-import scraperwiki
-import lxml.html, lxml.etree
+import lxml.html
+import lxml.etree
 import urllib2
 import urlparse
 
+settings = {}
 
+###############################################################################
+# Options parser for command line arguments, we definitely want a config file
+# and so we'll complain if we aren't given one.
+###############################################################################
+parser = OptionParser()
+parser.add_option("-c", "--config", dest="config",
+                  help="Path to the configuration file", metavar="FILE")
+parser.add_option("-v", "--verbose",
+                  action="store_true", dest="verbose", default=False,
+                  help="Write verbose output")                  
+(options, args) = parser.parse_args()
+
+if options.verbose:
+    print 'Starting nice_checker'
+
+if (not options.config) or (not os.path.exists(options.config)):
+    print """
+            Can't run unless we have a config file
+            Please specify the path to the file with the -c option\n"""
+            
+    sys.exit(1)
+
+###############################################################################
+# Load the configuration file and setup the require settings
+###############################################################################
+config = ConfigParser()
+config.readfp( open( options.config ) )
+
+output_folder = config.get('scraper_settings', 'pdf_output')
+output_folder = os.path.join( os.path.dirname(__file__), output_folder)
+output_folder = os.path.abspath(output_folder)
+if options.verbose:
+    print 'Will save output files to %s' % (output_folder,)
+settings[ 'output_folder' ] = output_folder
+
+
+"""
 base_url = 'http://www.nice.org.uk/guidance/index.jsp?action=ByType&type=2&status=3&p=off' 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -109,3 +150,4 @@ def Main():
         scraperwiki.sqlite.save(["rownumber"], data)
 
 Main()
+"""

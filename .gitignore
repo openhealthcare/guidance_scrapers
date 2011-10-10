@@ -1,4 +1,6 @@
+build/
 bin/
 lib/
 include/
 .Python
+dev_settings.cfg
