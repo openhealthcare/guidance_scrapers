@@ -21,4 +21,5 @@ How do I install it?
 * cd nice_scraper
 * virtualenv . --no-site-packages
 * pip install -r requirements.txt
+* cd setup; . ./install_cron.sh
 * ....
