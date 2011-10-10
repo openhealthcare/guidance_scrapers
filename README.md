@@ -12,3 +12,13 @@ How does it work?
 -----------------
 
 The scraper accesses the NICE website daily to check that the PDF files that we currently have are indeed the latest, and to also pull the new PDFs as they are added. Once we've determined if there is any new content we optionally regenerate the source JSON and HTML used to render the data to the client.
+
+
+How do I install it?
+--------------------
+
+* git clone git://github.com/openhealthcare/nice_scraper.git
+* cd nice_scraper
+* virtualenv . --no-site-packages
+* pip install -r requirements.txt
+* ....
