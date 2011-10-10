@@ -1,0 +1,72 @@
+/* Original style by @zarino (www.zarino.co.uk) */
+body {
+    font-size: 1.3em; 
+    background-color: #eee; 
+    padding: 20px;
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, sans-serif;
+}
+ul { 
+    margin: 0; 
+    padding: 0;
+    border-bottom: 2px solid #ccc;
+}
+li { 
+    display: block; 
+    margin: 0; 
+    padding: 0; 
+}
+li a { 
+    display: block; 
+    padding: 10px 15px; 
+    border: 2px solid #ccc; 
+    border-bottom: none; 
+    background-color: #fff;
+    text-decoration: none;
+}
+li a:hover { 
+    background-color: #eef; 
+}
+p {
+    position: relative;
+    margin: 0 0 1em 0;
+}
+#filter {
+    border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border: 2px solid #CCC;
+    width: 100%;
+    outline: none;
+    font-size: 1em;
+    line-height: 1.6em;
+    text-indent: 15px;
+    margin: -2px;
+}
+#filter:focus {
+    border-color: #999;
+}
+#cancel_filter {
+    font-weight: bold;
+    border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    background-color: #ccc;
+    position: absolute;
+    top: 4px;
+    right: 3px;
+    display: block;
+    color: white;
+    width: 1em;
+    height: 1em;
+    font-size: 1.3em;
+    text-align: center;
+    line-height: 0.88em;
+    cursor: pointer;
+}
+#cancel_filter:hover {
+    background-color: #999;
+}
+#cancel_filter{ 
+    display: none;
+}
+

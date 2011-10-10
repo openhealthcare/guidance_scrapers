@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+<title>NICE PDFs</title>
+<link rel="stylesheet" type="text/css" href="styles/default.css" />
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+<script>
+jQuery.expr[':'].Contains = function(a,i,m){
+     return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
+};
+
+$(function(){
+    $('#filter').bind('blur', function(){
+        if($('#filter').val() == ''){
+            $('li:hidden').show();
+            $('#cancel_filter:visible').hide();
+        }
+    }).bind('keyup', function(){
+        if($('#filter').val() != ''){
+            $('#cancel_filter:hidden').show();
+            $('li').each(function(){
+                if($(this).is(':Contains(' + $('#filter').val() + ')')){
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        } else {
+            $('li:hidden').show();
+            $('#cancel_filter:visible').hide();
+        }
+    });
+    $('#cancel_filter').bind('click', function(){
+        $('#filter').val('');
+        $(this).hide();
+        $('li:hidden').show();
+    });
+    $('#scraperwikipane').css({bottom: 0, top: 'auto'});
+});
+
+url = 'data.json';
+$.ajax({
+  url: url,
+  dataType: 'jsonp',
+  success: function( data ) {
+    $.each( data, function(idx) {
+        row = data[idx];
+        $('#items').append( '<li><a href="' + row['Quick reference guide - PDF'] + '">' + row['Title'] + '</a></li>' );
+    });    
+  }
+});
+</script>
+</head>
+<body>
+
+<p>
+<input id="filter" type="text" placeholder="Start typing to filter&hellip;" /><a id="cancel_filter">&times;</a>
+</p>
+
+<ul id='items'>
+    
+</ul>
+
+</body>
