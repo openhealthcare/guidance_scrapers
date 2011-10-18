@@ -11,7 +11,8 @@ TODO:
     * Check if the scraper is running on ScraperWiki or not and save data 
       appropriately
 
-Source code originally from https://scraperwiki.com/scrapers/nice_scraper/
+Source code originally from https://scraperwiki.com/scrapers/nice_scraper/ and
+mostly written by Julian Todd (@goatchurch)
 """
 import os, sys
 
@@ -119,13 +120,3 @@ if __name__ == '__main__':
     n = NiceScraper()
     n.run()
 
-"""
-
-
-
-
-
-#Quick reference guide - PDF
-
-Main()
-"""
