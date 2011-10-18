@@ -2,4 +2,4 @@ MAILTO=
 SHELL=/bin/bash
 
 # Run the scraper
-1 0 * * * echo 'Running scraper'
+1 0 * * * echo 'n'
