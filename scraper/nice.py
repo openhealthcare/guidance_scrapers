@@ -1,5 +1,5 @@
 """
-nice_checker.py
+nice.py
 
 Checks the NICE site to work out whether there are any changes to the PDFs.
 If not running on ScraperWiki then download the PDFs locally and regenerate
