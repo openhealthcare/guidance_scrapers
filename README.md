@@ -1,6 +1,6 @@
 
-NICE Scraper
-============
+Guidance Scrapers
+=================
 
 What is it?
 -----------
@@ -17,8 +17,8 @@ The scraper accesses the NICE website daily to check that the PDF files that we 
 How do I install it?
 --------------------
 
-* git clone git://github.com/openhealthcare/nice_scraper.git
-* cd nice_scraper
+* git clone git://github.com/openhealthcare/guidance_scrapers.git
+* cd guidance_scrapers
 * virtualenv . --no-site-packages
 * pip install -r requirements.txt
 * cd setup; . ./install_cron.sh
